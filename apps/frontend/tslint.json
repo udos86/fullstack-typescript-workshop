@@ -1,0 +1,20 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "fullstackTypescriptWorkshop",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "fullstack-typescript-workshop",
+      "kebab-case"
+    ]
+  },
+  "linterOptions": {
+    "exclude": ["!**/*"]
+  }
+}
