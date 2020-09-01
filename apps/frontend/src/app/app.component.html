@@ -33,7 +33,9 @@
 
           <label for="email" class="col-sm-12 control-label">E-Mail</label>
           <div class="col-sm-12">
-            <input type="text" class="form-control" id="email" placeholder="E-Mail" formControlName="email">
+            <input type="text" class="form-control" id="email" placeholder="E-Mail" formControlName="email"
+              [ngClass]="{'is-invalid': formGroup.get('email').invalid && formGroup.get('email').touched}">
+            <p *ngIf="formGroup.get('email').invalid && formGroup.get('email').touched" class="invalid-feedback">Field is not valid</p>
           </div>
 
         </div>
@@ -41,7 +43,7 @@
         <div class="form-group">
 
           <div class="col-sm-12">
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Send</button>
           </div>
 
         </div>

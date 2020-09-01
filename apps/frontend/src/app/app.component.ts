@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       firstName: null,
       lastName: null,
-      email: null
+      email: [null, [Validators.required, Validators.email]]
     });
   }
 
