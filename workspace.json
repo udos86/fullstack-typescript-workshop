@@ -180,6 +180,33 @@
           }
         }
       }
+    },
+    "validation": {
+      "root": "libs/validation",
+      "sourceRoot": "libs/validation/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/validation/tsconfig.lib.json",
+              "libs/validation/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/validation/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/validation/jest.config.js",
+            "tsConfig": "libs/validation/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
