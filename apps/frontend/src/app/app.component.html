@@ -4,9 +4,9 @@
 
     <h1 class="text-center">Fullstack TypeScript Sample</h1>
 
-    <div class="d-flex">
+    <div class="d-flex flex-column">
 
-      <form [formGroup]="formGroup">
+      <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
         <!-- FIRST NAME -->
         <div class="form-group">
@@ -50,6 +50,14 @@
 
           <div class="col-sm-12">
             <pre class="">{{formGroup.value | json}}</pre>
+          </div>
+
+        </div>
+
+        <div *ngIf="response$ | async as response" class="form-group">
+
+          <div class="col-sm-12">
+            <pre>{{ response }}</pre>
           </div>
 
         </div>
