@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { forbiddenValidator } from '@fullstack-typescript-workshop/validation';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -10,7 +11,7 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  
+
   formGroup: FormGroup;
   response$: Observable<any>;
 
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
       firstName: null,
-      lastName: null,
+      lastName: [null, forbiddenValidator('test')],
       email: [null, [Validators.required, Validators.email]]
     });
   }
