@@ -1,19 +1,10 @@
-form {
-  flex: 0 0 100%;
-}
-
-.form-container {
-  margin: 0 auto;
+main {
   max-width: 640px;
 }
 
-.form-container > h1 {
+main > h1 {
   margin-top: 0;
   margin-bottom: 4rem;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 button[type="submit"] {

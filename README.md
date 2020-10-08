@@ -29,81 +29,64 @@ npm i bootstrap
 
 2. Add the form markup to your `app.component.html`: 
 ```html
-<div class="container-fluid container-scroll overflow-hidden">
+<main class="container-fluid">
 
-  <div class="form-container">
+  <h1 class="text-center">Fullstack TypeScript Sample</h1>
 
-    <h1 class="text-center">Fullstack TypeScript Sample</h1>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
-    <div class="d-flex">
+    <!-- FIRST NAME -->
+    <div class="form-group">
 
-      <form>
-
-        <!-- FIRST NAME -->
-        <div class="form-group">
-
-          <label for="firstName" class="col-sm-12 control-label">First Name</label>
-          <div class="col-sm-12">
-            <input type="text" class="form-control" id="firstName" placeholder="First Name">
-          </div>
-
-        </div>
-
-        <!-- LAST NAME -->
-        <div class="form-group">
-
-          <label for="lastName" class="col-sm-12 control-label">Last Name</label>
-          <div class="col-sm-12">
-            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-          </div>
-
-        </div>
-
-        <!-- EMAIL -->
-        <div class="form-group">
-
-          <label for="email" class="col-sm-12 control-label">E-Mail</label>
-          <div class="col-sm-12">
-            <input type="text" class="form-control" id="email" placeholder="E-Mail">
-          </div>
-
-        </div>
-
-        <div class="form-group">
-
-          <div class="col-sm-12">
-            <button type="submit" class="btn btn-primary">Send</button>
-          </div>
-
-        </div>
-
-      </form>
+      <label for="firstName" class="col-sm-12 control-label">First Name</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+      </div>
 
     </div>
 
-  </div>
+    <!-- LAST NAME -->
+    <div class="form-group">
 
-</div>
+      <label for="lastName" class="col-sm-12 control-label">Last Name</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+      </div>
+
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group">
+
+      <label for="email" class="col-sm-12 control-label">E-Mail</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="email" placeholder="E-Mail">
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <div class="col-sm-12">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+
+    </div>
+
+  </form>
+
+</main>
 ```
 
 3. Add the styles to your `app.component.scss`:
 ```css
-form {
-  flex: 0 0 100%;
-}
-
-.form-container {
-  margin: 0 auto;
+main {
   max-width: 640px;
 }
 
-.form-container > h1 {
+main > h1 {
   margin-top: 0;
   margin-bottom: 4rem;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 button[type="submit"] {
@@ -203,6 +186,8 @@ export class AppComponent implements OnInit {
 
 4. Optionally visualize the form bindings via `JsonPipe`:
 ```html
+  ...
+
   <div class="form-group">
     <div class="col-sm-12">
         <pre class="">{{formGroup.value | json}}</pre>
@@ -323,6 +308,8 @@ onSubmit() {
 
 5. Optionally add some debug output to the markup via `AsyncPipe`:
 ```html
+  ...
+
   <div *ngIf="response$ | async as response" class="form-group">
 
     <div class="col-sm-12">

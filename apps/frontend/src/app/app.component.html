@@ -1,77 +1,69 @@
-<div class="container-fluid container-scroll overflow-hidden">
+<main class="container-fluid">
 
-  <div class="form-container">
+  <h1 class="text-center">Fullstack TypeScript Sample</h1>
 
-    <h1 class="text-center">Fullstack TypeScript Sample</h1>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
-    <div class="d-flex flex-column">
+    <!-- FIRST NAME -->
+    <div class="form-group">
 
-      <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-
-        <!-- FIRST NAME -->
-        <div class="form-group">
-
-          <label for="firstName" class="col-sm-12 control-label">First Name</label>
-          <div class="col-sm-12">
-            <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
-          </div>
-
-        </div>
-
-        <!-- LAST NAME -->
-        <div class="form-group">
-
-          <label for="lastName" class="col-sm-12 control-label">Last Name</label>
-          <div class="col-sm-12">
-            <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName"
-              [ngClass]="{'is-invalid': formGroup.get('lastName').invalid && formGroup.get('lastName').touched}">
-            <p *ngIf="formGroup.get('lastName').hasError('forbidden') && formGroup.get('lastName').touched"
-              class="invalid-feedback">Field value is forbidden</p>
-          </div>
-
-        </div>
-
-        <!-- EMAIL -->
-        <div class="form-group">
-
-          <label for="email" class="col-sm-12 control-label">E-Mail</label>
-          <div class="col-sm-12">
-            <input type="text" class="form-control" id="email" placeholder="E-Mail" formControlName="email"
-              [ngClass]="{'is-invalid': formGroup.get('email').invalid && formGroup.get('email').touched}">
-            <p *ngIf="formGroup.get('email').invalid && formGroup.get('email').touched" class="invalid-feedback">Field
-              is not valid</p>
-          </div>
-
-        </div>
-
-        <div class="form-group">
-
-          <div class="col-sm-12">
-            <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Send</button>
-          </div>
-
-        </div>
-
-        <div class="form-group">
-
-          <div class="col-sm-12">
-            <pre class="">{{formGroup.value | json}}</pre>
-          </div>
-
-        </div>
-
-        <div *ngIf="response$ | async as response" class="form-group">
-
-          <div class="col-sm-12">
-            <pre>{{ response }}</pre>
-          </div>
-
-        </div>
-
-      </form>
+      <label for="firstName" class="col-sm-12 control-label">First Name</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
+      </div>
 
     </div>
 
-  </div>
+    <!-- LAST NAME -->
+    <div class="form-group">
 
-</div>
+      <label for="lastName" class="col-sm-12 control-label">Last Name</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName"
+          [ngClass]="{'is-invalid': formGroup.get('lastName').invalid && formGroup.get('lastName').touched}">
+        <p *ngIf="formGroup.get('lastName').hasError('forbidden') && formGroup.get('lastName').touched"
+          class="invalid-feedback">Field value is forbidden</p>
+      </div>
+
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group">
+
+      <label for="email" class="col-sm-12 control-label">E-Mail</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="email" placeholder="E-Mail" formControlName="email"
+          [ngClass]="{'is-invalid': formGroup.get('email').invalid && formGroup.get('email').touched}">
+        <p *ngIf="formGroup.get('email').invalid && formGroup.get('email').touched" class="invalid-feedback">Field
+          is not valid</p>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <div class="col-sm-12">
+        <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Send</button>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <div class="col-sm-12">
+        <pre class="">{{formGroup.value | json}}</pre>
+      </div>
+
+    </div>
+
+    <div *ngIf="response$ | async as response" class="form-group">
+
+      <div class="col-sm-12">
+        <pre>{{ response }}</pre>
+      </div>
+
+    </div>
+
+  </form>
+
+</main>
