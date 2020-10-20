@@ -5,14 +5,15 @@
 Create the **Nx** workspace via `npx`:
 ```
 npx create-nx-workspace@latest <project-name>
+npm i nx -g
 ```
 
 ## 2A [FRONTEND] - Angular Setup
 
 1. Create the **Angular** application:
 ```
-ng add @nrwl/angular 
-ng g @nrwl/angular:application frontend
+npm i @nrwl/angular -D 
+nx g @nrwl/angular:application frontend
 ```
 
 2. Install Bootstrap:
@@ -208,8 +209,8 @@ pre {
 
 Create the **Nest** backend application:
 ```
-ng add @nrwl/nest
-ng g @nrwl/nest:application backend --frontend-project frontend 
+npm i @nrwl/nest -D
+nx g @nrwl/nest:application backend --frontend-project frontend 
 ```
 
 ## 3B [BACKEND] - Form Endpoint
