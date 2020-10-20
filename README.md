@@ -33,7 +33,7 @@ npm i bootstrap
 
   <h1 class="text-center">Fullstack TypeScript Sample</h1>
 
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <form>
 
     <!-- FIRST NAME -->
     <div class="form-group">
