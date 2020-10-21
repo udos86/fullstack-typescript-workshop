@@ -391,7 +391,7 @@ ngOnInit() {
 
 Create the library project shared between frontend and backend:
 ```
-ng g @nrwl/workspace:library validation
+nx g @nrwl/workspace:library validation
 ```
 
 ## 7B [LIBRARY] - Custom Validator Function
